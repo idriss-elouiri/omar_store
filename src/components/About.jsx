@@ -10,7 +10,7 @@ export default function AboutUs() {
         {/* الجانب الأيسر - الصورة */}
         <div className="w-full lg:w-1/2">
           <Image
-            src="/images/about_img.png"
+            src="/images/contact_img.png"
             alt="صورة من نحن"
             width={500}
             height={500}

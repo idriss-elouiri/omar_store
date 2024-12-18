@@ -10,7 +10,6 @@ export default function ProductDetails() {
   const { id } = useParams();
   const { setCartItems } = useCart();
   const [product, setProduct] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(null);
   const [review, setReview] = useState({ rating: 5, comment: "" });
@@ -79,16 +78,10 @@ export default function ProductDetails() {
   };
 
   const handleAddToCart = () => {
-    if (!selectedSize) {
-      alert("Please select a size.");
-      return;
-    }
-
     const cartItem = {
       id: product._id,
       title: product.title,
       price: product.price,
-      size: selectedSize,
       quantity,
       image: mainImage,
     };
@@ -138,24 +131,6 @@ export default function ProductDetails() {
             <p className="text-gray-700 text-lg mb-6">
               {product?.content || "No description available."}
             </p>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              Select Size
-            </h3>
-            <div className="flex gap-4 mb-6">
-              {product?.sizes?.map((size) => (
-                <button
-                  key={size}
-                  onClick={() => setSelectedSize(size)}
-                  className={`px-4 py-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg ${
-                    selectedSize === size
-                      ? "bg-black text-white"
-                      : "hover:bg-black hover:text-white"
-                  } transition`}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
 
             {/* Colors and Images */}
             {Object.entries(product?.imagesByColor || {}).map(

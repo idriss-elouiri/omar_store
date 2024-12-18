@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -51,38 +53,30 @@ const Footer = () => {
           </div>
 
           {/* تواصل معنا */}
-          <div className="md:w-1/4">
-            <h3 className="text-xl text-black font-semibold mb-4">
-              تواصل معنا
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="tel:+10000000000"
-                  className="text-slate-800 hover:text-black"
-                >
-                  +1-000-000-0000
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:greatstackdev@gmail.com"
-                  className="text-slate-800 hover:text-black"
-                >
-                  greatstackdev@gmail.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  className="text-slate-800 hover:text-black"
-                >
-                  إنستاجرام
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div className="col-span-2 sm:col-auto">
+              <h1 className="text-xl font-bold sm:text-left mb-3">العنوان</h1>
+              <div>
+                <div className="flex items-center gap-3 mt-6">
+                  <FaLocationArrow />
+                  <p>الدار البيضاء, البرنوصي</p>
+                </div>
+                <div className="flex items-center gap-3 mt-6">
+                  <FaMobileAlt />
+                  <p>0621541569</p>
+                </div>
+                <div className="flex items-center gap-3 mt-6">
+                  <Link href={"https://www.instagram.com/omartahir25/"}>
+                    <FaInstagram className="text-2xl hover-text-black duration-200 hover:text-primary" />
+                  </Link>
+                  <Link href={"#"}>
+                    <FaLinkedin className="text-2xl hover-text-black duration-200 hover:text-primary" />
+                  </Link>
+                  <Link href={"#"}>
+                    <FaFacebook className="text-2xl hover-text-black duration-200 hover:text-primary" />
+                  </Link>
+                </div>
+              </div>
+            </div>
         </div>
 
         {/* قسم حقوق الطبع */}

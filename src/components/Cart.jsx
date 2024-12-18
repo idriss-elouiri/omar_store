@@ -71,9 +71,6 @@ const Cart = () => {
                     <p className="text-lg font-semibold text-slate-800">
                       ${item.price * item.quantity}
                     </p>
-                    <p className="text-slate-600 font-semibold w-fit py-1 px-2 bg-slate-300 border border-slate-400">
-                      {item.size}
-                    </p>
                   </div>
                 </div>
               </div>

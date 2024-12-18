@@ -100,7 +100,15 @@ export default function Collection() {
           <div className="mb-6 p-3 border">
             <h3 className="font-semibold text-md mb-2">الفئات</h3>
             <ul>
-              {["رجال", "نساء", "اطفال"].map((category) => (
+              {[
+                "حواسيب",
+                "هواتف",
+                "شاشات",
+                "اكسسوارات",
+                "سماعات",
+                "فأرة",
+                "لوحة المفاتيح",
+              ].map((category) => (
                 <li key={category} className="py-1">
                   <input
                     type="checkbox"
@@ -110,25 +118,6 @@ export default function Collection() {
                   />
                   <label htmlFor={category} className="ml-2 text-slate-600">
                     {category}
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mb-6 p-3 border">
-            <h3 className="font-semibold text-md mb-2">الأنواع</h3>
-            <ul>
-              {["ملابس علوية", "ملابس سفلية", "ملابس شتوية"].map((type) => (
-                <li key={type} className="py-1">
-                  <input
-                    type="checkbox"
-                    id={type}
-                    onChange={() => handleFilterChange("types", type)}
-                    checked={types.includes(type)}
-                  />
-                  <label htmlFor={type} className="ml-2 text-slate-600">
-                    {type}
                   </label>
                 </li>
               ))}

@@ -39,7 +39,7 @@ const PlaceOrderPage = () => {
   const calculateTotal = () => {
     return calculateSubtotal() + shippingFee;
   };
-
+console.log(cartItems)
   const handlePlaceOrder = async () => {
     const orderData = {
       deliveryInfo,
